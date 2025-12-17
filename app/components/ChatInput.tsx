@@ -46,7 +46,7 @@ export default function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Message Gemini..."
+            placeholder="Tell me about your song..."
             disabled={disabled}
             rows={1}
             className="w-full resize-none rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#171717] px-4 py-3 pr-12 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 dark:focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed max-h-[200px] overflow-y-auto"
@@ -72,7 +72,7 @@ export default function ChatInput({ onSendMessage, disabled }: ChatInputProps) {
           </button>
         </form>
         <p className="mt-2 text-xs text-center text-gray-500 dark:text-gray-400">
-          Gemini 2.5 Flash can make mistakes. Check important info.
+          AI can make mistakes. Review your prompt before using it.
         </p>
       </div>
     </div>
