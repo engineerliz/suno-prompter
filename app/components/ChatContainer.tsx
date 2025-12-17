@@ -39,7 +39,8 @@ export default function ChatContainer() {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to get response");
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || `Failed to get response (${response.status})`);
       }
 
       const data = await response.json();
@@ -52,7 +53,9 @@ export default function ChatContainer() {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
         role: "assistant",
-        content: "Sorry, I encountered an error. Please try again.",
+        content: error instanceof Error 
+          ? `Error: ${error.message}` 
+          : "Sorry, I encountered an error. Please try again.",
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
