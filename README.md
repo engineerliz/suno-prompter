@@ -1,24 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Suno Prompter - Gemini Chat Interface
+
+A ChatGPT-like chat interface built with Next.js and connected to Google's Gemini 2.5 Flash LLM.
+
+## Features
+
+- 🎨 ChatGPT-inspired UI/UX design
+- 💬 Real-time chat interface with message history
+- 🤖 Powered by Google Gemini 2.5 Flash
+- 🌙 Dark mode support
+- 📱 Responsive design
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- A Google Gemini API key ([Get one here](https://aistudio.google.com/app/apikey))
+
+### Installation
+
+1. Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+2. Create a `.env.local` file in the root directory:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
+
+Optionally, you can also set a custom model:
+
+```bash
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-1.5-flash-latest
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Simply type your message in the input field and press Enter (or Shift+Enter for a new line). The chat interface will send your message to Gemini and display the response.
+
+## Project Structure
+
+- `app/page.tsx` - Main page component
+- `app/components/ChatContainer.tsx` - Main chat container component
+- `app/components/ChatMessage.tsx` - Individual message component
+- `app/components/ChatInput.tsx` - Input component
+- `app/api/chat/route.ts` - API route for Gemini integration
 
 ## Learn More
 
